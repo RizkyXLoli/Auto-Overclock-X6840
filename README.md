@@ -85,21 +85,21 @@ Repack vendor_boot.img
 Rebuild AVB
 Verifikasi image hasil
 SHA256 output
-1. Clone Repository
+**1. Clone Repository**
 
 Clone repository:
 
 cd ~
-git clone https://github.com/RizkyXLoli/Auto-Overclock.git
+git clone https://github.com/RizkyXLoli/Auto-Overclock-X6840
 
 Masuk ke folder:
 
-cd ~/Auto-Overclock
+cd ~/Auto-Overclock-X6840
 
 Periksa isi repository:
 
 ls -lah
-2. Pilih Setup VPS
+**2. Pilih Setup VPS**
 
 Repository menyediakan dua script setup VPS:
 
@@ -121,11 +121,11 @@ Auto-SetUp-VPS-NO-SUDO.sh
 
 Jangan menjalankan kedua script setup secara bersamaan.
 
-3. VPS dengan SUDO/ROOT
+**3. VPS dengan SUDO/ROOT**
 
 Masuk ke repository:
 
-cd ~/Auto-Overclock
+cd ~/Auto-Overclock-X6840
 
 Berikan permission:
 
@@ -140,11 +140,11 @@ Ikuti proses setup sampai selesai.
 Script ini ditujukan untuk VPS yang menyediakan akses
 sudo/root sesuai kebutuhan setup.
 
-4. VPS tanpa SUDO/ROOT
+**4. VPS tanpa SUDO/ROOT**
 
 Masuk ke repository:
 
-cd ~/Auto-Overclock
+cd ~/Auto-Overclock-X6840
 
 Berikan permission:
 
@@ -159,7 +159,7 @@ sudo/root.
 
 Ikuti proses setup sampai selesai.
 
-5. Pemeriksaan Tools
+**5. Pemeriksaan Tools**
 
 Setelah setup selesai, pastikan script Auto Overclock tersedia:
 
@@ -189,11 +189,12 @@ mkdtboimg
 fdtget
 fdtput
 avbtool
+SUDAH OTOMATIS TERINSTALL SETELAH MENJALANKAN AUTO SETUP
 
 Lokasi tools mengikuti konfigurasi yang digunakan oleh script
 Auto Overclock.
 
-6. Persiapan vendor_boot.img
+**6. Persiapan vendor_boot.img**
 6.1 Siapkan vendor_boot stock
 
 Siapkan vendor_boot.img yang sesuai dengan firmware/perangkat.
@@ -210,7 +211,7 @@ Jika file ditemukan, builder akan mendeteksinya secara otomatis.
 
 Tidak perlu memasukkan path vendor_boot.img melalui argument command.
 
-6.2 Backup vendor_boot stock
+**6.2 Backup vendor_boot stock**
 
 Sangat disarankan membuat backup:
 
@@ -229,7 +230,7 @@ vendor_boot.stock.img
 
 vendor_boot.stock.img merupakan cadangan sebelum modifikasi.
 
-7. Menjalankan Auto Overclock
+**7. Menjalankan Auto Overclock**
 
 Masuk ke repository:
 
@@ -253,7 +254,7 @@ Builder akan mencari:
 
 secara otomatis.
 
-8. Pengaturan CPU Frequency
+**8. Pengaturan CPU Frequency**
 
 Builder akan membaca frequency stock dari Device Tree.
 
@@ -290,7 +291,7 @@ Contoh lain:
 
 Little : 1800 → 1900 MHz
 Big    : 2000 → 2100 MHz
-9. Pengaturan Voltage
+**9. Pengaturan Voltage**
 
 Setelah frequency ditentukan, builder memberikan pilihan:
 
@@ -354,7 +355,7 @@ berarti:
 bukan:
 
 stock + 1010000 µV
-10. Navigasi K dan Y
+**10. Navigasi K dan Y**
 
 Builder menggunakan navigasi:
 
@@ -414,7 +415,7 @@ K
 Jika konfigurasi sudah benar:
 
 Y
-11. Konfigurasi Akhir
+**11. Konfigurasi Akhir**
 
 Sebelum build, builder menampilkan Summary.
 
@@ -488,7 +489,7 @@ Rebuild AVB
       |
       v
 Verifikasi
-13. Verifikasi
+**13. Verifikasi**
 
 Builder melakukan verifikasi terhadap image hasil build.
 
@@ -515,7 +516,7 @@ opp-microvolt: 1090000
 Nilai hexadecimal opp-hz dapat dikonversi menjadi frequency
 dalam MHz untuk memastikan hasil sesuai konfigurasi.
 
-14. Output
+**14. Output**
 
 Image hasil build disimpan di:
 
@@ -538,7 +539,7 @@ sha256sum output/vendor_boot_OC+100MHz.img
 
 Sesuaikan nama file dengan image yang dibuat.
 
-15. Backup
+**15. Backup**
 
 Sebelum melakukan modifikasi, selalu simpan:
 
@@ -552,7 +553,7 @@ Sebaiknya simpan juga SHA256:
 
 sha256sum vendor_boot.img
 sha256sum vendor_boot.stock.img
-16. Keterbatasan
+**16. Keterbatasan**
 
 Builder ini dikembangkan berdasarkan struktur Device Tree
 Infinix Smart 20 (X6840).
@@ -579,7 +580,7 @@ Implementasi DVFS berbeda
 Jangan menggunakan builder X6840 pada perangkat lain tanpa
 memeriksa Device Tree dan struktur OPP perangkat tersebut.
 
-17. Peringatan
+**17. Peringatan**
 
 Overclock dapat menyebabkan:
 
@@ -601,20 +602,12 @@ Jangan langsung menggunakan nilai OC ekstrem.
 
 Selalu simpan vendor_boot.img stock sebagai backup.
 
-18. Disclaimer
+**18. Disclaimer**
 
-Project ini dibuat untuk:
-
-Eksperimen
-Pembelajaran
-Pengembangan
-Pengujian
-
-pada perangkat yang kompatibel.
-
+KERUSAKAN PERANGKAT AKIBAT OVERCLOCK SEPENUHNYA SALAH PENGGUNA
+**KALAU TIDAK TAHU ATUR VOLTASE SEBAIKNYA CARI TAHU DULU**
 Penggunaan tool dan konfigurasi overclock dilakukan atas risiko
 pengguna sendiri.
-
 Pembuat tidak bertanggung jawab atas:
 
 Bootloop
@@ -625,80 +618,15 @@ Kerusakan hardware
 
 yang mungkin terjadi akibat penggunaan project ini.
 
-Project Information
-Project : Auto-Overclock
+P
 Author  : Rizky X Loli
 
 Target pengembangan:
 Infinix Smart 20 (X6840)
-
 Platform:
 MediaTek
-
 Target:
 CPU OPP
-
 Method:
 Modifikasi CPU OPP pada Device Tree vendor_boot
-Quick Start
-cd ~
-git clone https://github.com/RizkyXLoli/Auto-Overclock.git
-cd ~/Auto-Overclock
-
-Pilih salah satu:
-
-VPS SUDO/ROOT
-chmod +x Auto-SetUp-VPS-SUDO.sh
-./Auto-SetUp-VPS-SUDO.sh
-VPS NO-SUDO/ROOTLESS
-chmod +x Auto-SetUp-VPS-NO-SUDO.sh
-./Auto-SetUp-VPS-NO-SUDO.sh
-
-Setelah setup:
-
-cd ~/Auto-Overclock
-chmod +x X6840-Auto-OC-Builder-v2.sh
-
-Letakkan:
-
-vendor_boot.img
-
-di:
-
-~/Auto-Overclock/
-
-Backup:
-
-cp vendor_boot.img vendor_boot.stock.img
-
-Jalankan:
-
-./X6840-Auto-OC-Builder-v2.sh
-
-Kemudian ikuti:
-
-CPU Frequency
-      |
-      v
-Y = Lanjut
-      |
-      v
-Voltage
-  |       |
-  Y       N
-  |       |
-  v       v
-Atur    Stock
-Voltage Voltage
-  |
-  v
-Summary
-  |
-  +---- K = kembali
-  |
-  Y = Build
-  |
-  v
-Output
-
-Pembuat: Rizky X Loli
+**TOOLS INI BISA DIJALANKAN DI VPS, TERMUX? COBA AJA SENDIRI, SAYA BELUM COBA DI TERMUX"
